@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 
-application = Flask(name)
+application = Flask(__name__)
 
 @application.route('/')
 def hello():
@@ -10,5 +10,5 @@ def hello():
 def health():
     return jsonify(status='ok'), 200
 
-if name == 'main':
+if __name__ == 'main':
     application.run()
